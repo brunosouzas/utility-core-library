@@ -1,0 +1,16 @@
+#%RAML 1.0 Library
+usage: Provides a collection of common resources, traits and types for use in API Specifications
+
+securitySchemes:
+  Token: !include security/Token.raml
+
+uses:
+  ErrorTypes: libraries/ErrorTypeLibrary.raml
+
+traits:
+  ErrorResponses: !include traits/ErrorResponsesTrait.raml
+  Pageable: !include traits/PageableTrait.raml
+  Trackable: !include traits/TrackableTrait.raml
+
+types:
+  ErrorResponse: ErrorTypes.ErrorResponse

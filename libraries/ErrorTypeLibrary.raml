@@ -1,0 +1,42 @@
+#%RAML 1.0 Library
+usage: This library provides some common response message structures for APIs
+
+types:
+  ErrorResponse:
+    description: Represents a standard message body to be returned with error responses
+    properties:
+      apiName:
+        type: string
+        description: "API Name"
+        example: "domain-exp-customer"
+      version:
+        type: string
+        description: "API Version"
+        example: "1.0.0"
+      correlationId:
+        type: string
+        description: "Transaction Id"
+        example: "97a9ef90-b4f0-11ec-9f6f-88e9fe7dffb0"
+      timestamp:
+        type: string
+        description: "DateTime"
+        example: "2022-04-05T15:56:37.609+01:00"
+      errorMessage?:
+        type: string
+        description: "Error Message When you have error from system API"
+        example: "HTTP POST on resource 'http://domain-proc-customer.us-e2.cloudhub.io/api/customer' failed: bad request (400)."
+      errorDetails:
+        type: object
+        properties:
+          errorCode:
+            type: integer
+            description: "The Errorcode"
+            example: 500
+          errorMessage:
+            type: string
+            description: "Verbose human readable error message"
+            example: "You have issues accessing the system"
+          additionalInfo?:
+            type: string
+            description: "Additional Info"
+            example: "additional info from error or API"
