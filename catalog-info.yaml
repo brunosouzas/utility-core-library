@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: utility-core-library
+  title: Utility Core Library
+  tags:
+    - raml
+    - fragment
+    - mulesoft
+  description: This library defines a set of resources that are commonly used in API specifications.
+  annotations:
+    github.com/project-slug: 'brunosouzas/utility-core-library'
+    backstage.io/techdocs-ref: dir:./techDocs
+spec:
+  type: fragment
+  lifecycle: development
+  owner: administrators
